@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .header {
+            background-color: #d0c4aa;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .header .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-bar button {
+            margin-left: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+            border: none;
+            background-color: #f4f4f4;
+            cursor: pointer;
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        /* Side Menu */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #c8bca4;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease-in-out;
+            padding-top: 20px;
+            z-index: 3; /* Ensures it's above everything */
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .side-menu a:hover {
+            background-color: #b0a58a;
+        }
+
+        .close-btn {
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            display: block;
+            text-align: right;
+        }
+
+
+        .container {
+            margin: 120px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .profile-section {
+            text-align: center;
+        }
+        .profile-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
+        .profile-name {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .edit-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        h1{
+            text-align: left;
+            font-size: 30px;
+            margin-left: 30px;
+            /* margin-bottom: 20px; */
+        }
+
+        .form-container {
+            /* max-width: 400px;
+            width: 100%; */
+            margin-top: 0px;
+            align-items: center;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .form-container .form-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .form-container label {
+            font-size: 16px;
+            margin-right: 10px;
+            width: 100px;
+            text-align: right;
+        }
+        .form-container button {
+    display: block;
+    margin: 20px auto 0; /* Centers the button */
+    padding: 8px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #f8f1e7;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"] {
+            flex-grow: 1;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .name-input {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>X</button>
+        </div>
+        <div>
+            <img src="icon_profile.png" alt="Profile Icon" class="icon">
+            <!-- <img src="icon_menu-bar.png" alt="Menu Icon" class="icon"> -->
+            <span onclick="openMenu()" ><img src="icon_menu-bar.png" class="icon" > </span>
+        </div>
+    </div>
+    <div id="side-menu" class="side-menu">
+        <span class="close-btn" onclick="closeMenu()">✖</span>
+        <a href="MainMenu.php">Home</a>
+		<a href="Favourite.php">Favourite</a>
+        <a href="HistoryOfCom.html">History of communication</a>
+        <a href="Profile.html">Profile</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="ContactUs.html">Contact Us</a>
+		<a href="DMLogin.html">Log Out</a>
+    </div>
+
+    <h1>Profile</h1>
+
+    <div class="container">
+        <div class="profile-section">
+    <img src="icon_profile.png" alt="Profile Icon" class="profile-icon" id="profile-pic">
+	<div>
+	<input type="file" id="file-input" accept="image/*" style="display: none;">
+
+    <button class="upload-btn" onclick="document.getElementById('file-input').click()">Change Picture</button>
+    
+    <div class="profile-name">
+        <span id="name-display"></span>
+        <img src="pencil-icon.jpg" alt="Edit Icon" class="edit-icon" id="edit-icon">
+    </div>
+    <div class="name-input">
+        <input type="text" id="name-input" placeholder="Enter your new name">
+        <button id="save-name">Save</button>
+    </div>
+</div>
+        <div class="form-container">
+    <form id="profile-form">
+        <div class="form-row">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-row">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+            <label for="password">New Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <button type="submit">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+    </div>
+    <script>
+	function openMenu() {
+        document.getElementById("side-menu").style.right = "0";
+    }
+
+    function closeMenu() {
+        document.getElementById("side-menu").style.right = "-250px";
+    }
+	document.addEventListener("DOMContentLoaded", function () {
+    fetchProfile();
+
+    document.getElementById("profile-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        updateProfile();
+    });
+
+    document.getElementById("file-input").addEventListener("change", function () {
+        uploadProfilePicture();
+    });
+
+    document.getElementById("edit-icon").addEventListener("click", function () {
+        document.getElementById("name-input").style.display = "block";
+        document.getElementById("name-display").style.display = "none";
+    });
+
+    document.getElementById("save-name").addEventListener("click", function () {
+        let newName = document.getElementById("name-input").value;
+        document.getElementById("name-display").textContent = newName;
+        document.getElementById("name-input").style.display = "none";
+        document.getElementById("name-display").style.display = "block";
+    });
+});
+
+function fetchProfile() {
+    fetch("fetch_profile.php")
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+            document.getElementById("name-display").textContent = data.name;
+            document.getElementById("username").value = data.username;
+            document.getElementById("email").value = data.email;
+            document.getElementById("profile-pic").src = data.profile_pic ? data.profile_pic : "icon_profile.png";
+        })
+        .catch(error => console.error("Error fetching profile:", error));
+}
+
+function updateProfile() {
+    let formData = new FormData(document.getElementById("profile-form"));
+
+    fetch("update_profile.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(message => {
+        alert(message);
+        fetchProfile();
+    })
+    .catch(error => console.error("Error updating profile:", error));
+}
+
+function uploadProfilePicture() {
+    let formData = new FormData();
+    formData.append("profile_pic", document.getElementById("file-input").files[0]);
+
+    fetch("upload_profile_pic.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(message => {
+        alert(message);
+        fetchProfile();
+    })
+    .catch(error => console.error("Error uploading profile picture:", error));
+}
+</script>
+
+</body>
+</html>

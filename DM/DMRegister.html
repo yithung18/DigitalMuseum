@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Register</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Times New Roman", Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 88vh; */
+            background-color: #f0f0f0;
+        }
+
+        .register-container {
+            background: linear-gradient(to top, rgba(0,0,0,0.4)30%, rgba(0,0,0,0.7)90%), url(login_background.jpeg);
+            background-size: cover;
+            /* background-attachment: fixed; */
+            height: 650px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .register-container h1 {
+            margin: 0;
+            font-size: 30px;
+            color: #e8dcc3;
+            padding: 20px;
+        }
+
+        .register-text {
+            margin-top: -20px;
+            font-size: 27px;
+        }
+
+        .form-container {
+            font-family: 'Poppins', serif;
+            width: 70%;
+            height: 55%;
+            margin: auto;
+            padding: 50px;
+            align-items: center;
+            background: rgba(230, 230, 230, 0.9);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .form-container div {
+            margin-bottom: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container label {
+            font-size:18px;
+            margin-right: 0px;
+            text-align: left;
+            width: 100px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"] {
+            width: 400px;
+            padding: 7px;
+            margin-bottom: 7px;
+            font-size: 12px;
+            border: none;
+            border-radius: 30px;
+            
+        }
+
+
+        .input{
+            margin-left: -60px;
+        }
+
+        .form-container .name-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .form-container .name-group input {
+            width: 140px;
+        }
+
+        .form-container .gender-group {
+            margin-left: 0px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-container button {
+            padding: 8px 20px;
+            font-size: 14px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #f8f1e7;
+            border: none;
+            border-radius: 30px;
+        }
+
+        .login{
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h1>Welcome to Digital Museum!</h1>
+
+        <div class="form-container">
+            <p class="register-text"><b>Register</b></p>
+
+            <form action="register.php" method="POST" onsubmit="return validateForm()">
+                <label for="first-name"></label>
+                <div class="name-group">
+                    <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                    <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                </div>
+                <div class="gender-group">
+                    <label for="gender">Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male"> Male
+                    <input type="radio" id="female" name="gender" value="female"> Female
+                </div>
+                <div class="input">
+                    <label for="username"></label>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="input">
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input">
+                    <label for="password"></label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input">
+                    <label for="confirm-password"></label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
+                </div>
+                <div>
+                    <button type="submit">Register</button>
+                </div>
+                <div class="register">
+                    <p>Already have an account? <a href="DMLogin.html">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+            
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

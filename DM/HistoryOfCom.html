@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        
+        <title>History of Communication</title>
+
+        <style>
+            body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            }
+            
+            .menu-icon{
+                font-size: 24px;
+                cursor: pointer;
+            }
+            /* Side Menu */
+            .side-menu {
+                position: fixed;
+                top: 0;
+                right: -250px;
+                width: 250px;
+                height: 100%;
+                background-color: #c8bca4;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+                transition: right 0.3s ease-in-out;
+                padding-top: 20px;
+                z-index: 3; /* Ensures it's above everything */
+            }
+
+            .side-menu a {
+                display: block;
+                padding: 10px 20px;
+                font-size: 18px;
+                text-decoration: none;
+                color: black;
+            }
+
+            .side-menu a:hover {
+                background-color: #b0a58a;
+            }
+
+            .close-btn {
+                font-size: 24px;
+                cursor: pointer;
+                padding: 10px;
+                display: block;
+                text-align: right;
+            }
+
+            .main{
+                font-family: "Goudy Bookletter 1911", serif;
+                width: auto;
+                height: auto;
+                background: linear-gradient(to top, rgba(0,0,0,0.3)50%, rgba(0,0,0,0.3)50%), url(HistoryOfCom.webp);
+                background-position: center;
+                background-size: cover;
+            }
+            .form-container{
+                width: 70%;
+                margin: auto;
+                /* margin-top: 50px; */
+                padding: 50px;
+                text-align: left;
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+            .form-container h2{
+                font-size: 35px;
+            }
+            
+            .info-img{
+                width: 50%; 
+                max-width: 500px; 
+                height: auto; 
+                align-items: left;
+                margin: 0px auto; 
+                display: block;
+                border-radius: 10px;
+            }
+            h3{
+                margin-bottom: -10px;
+            }
+            figure{
+                text-align: center;
+                font-size: 11px;
+                margin-top: 10px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <div id="side-menu" class="side-menu">
+                <span class="menu-icon" onclick="openMenu()">&#9776;</span>
+                <span class="close-btn" onclick="closeMenu()">✖</span>
+                <a href="MainMenu.html">Home</a>
+                <a href="#recommendations">Recommendation</a>
+                <a href="#new">What's new</a>
+                <a href="HistoryOfCom.html">History of communication</a>
+                <a href="Favourite.html">Favourite</a>
+                <a href="Profile.html">Profile</a>
+                <a href="AboutUs.html">About Us</a>
+                <a href="ContactUs.html">Contact Us</a>
+            </div>
+
+            <div class="form-container">
+                <h2>History of communication</h2>
+                <p>
+                    The history of communication technologies (media and appropriate inscription tools) have evolved in tandem with 
+                    shifts in political and economic systems, and by extension, systems of power. Communication can range from very subtle processes of exchange to full conversations and mass communication. 
+                    The history of communication itself can be traced back since the origin of speech circa 100,000 BCE. The use of technology in communication may be considered since the first use of symbols about 30,000 years BCE. 
+                    Among the symbols used, there are cave paintings, petroglyphs, pictograms and ideograms. Writing was a major innovation, as well as printing technology and, more recently, telecommunications and the Internet.
+                </p>
+
+                <h3>Primitive times</h3>
+                <p>
+                    Human communication was initiated with the origin of speech approximately 100,000 BCE. Symbols were developed about 30,000 years ago. 
+                    The imperfection of speech allowed easier dissemination of ideas and eventually resulted in the creation of new forms of communication, improving both the range at which people could communicate and the longevity of the information. 
+                    All of those inventions were based on the key concept of the symbol.
+                    <br>
+                    The oldest known symbols created for communication were cave paintings, a form of rock art, dating to the Upper Paleolithic age. 
+                    The oldest known cave painting is located within Chauvet Cave, dated to around 30,000 BCE. These paintings contained increasing amounts of information: people may have created the first calendar as far back as 15,000 years ago.
+                    The connection between drawing and writing is further shown by linguistics: 
+                    in Ancient Egypt and Ancient Greece the concepts and words of drawing and writing were the same (Egyptian: 's-sh', Greek: 'graphein').
+                </p>
+
+                <h3>Petroglyphs</h3>
+                <p>
+                    The next advancement in the history of communications came with the production of petroglyphs, carvings into a rock surface. It took about 20,000 years for Homo sapiens to move from the first cave paintings to the first petroglyphs, 
+                    dated to approximately the Neolithic and late Upper Paleolithic boundary, about 10,000 to 12,000 years ago. The petroglyphs of the Hawaiian islands were associated with several kinds of symbolism, myths, legends, and art.
+                    <figure>
+                        <img src="Haljesta.jpg" class="info-img">
+                        <figcaption>Petroglyphs from Häljesta (sv), Sweden. Nordic Bronze Age</figcaption>
+                    </figure>
+                    It is possible that Homo sapiens (humans) of that time used some other forms of communication, often for mnemonic purposes - specially arranged stones, symbols carved in wood or earth, quipu-like rocks, tattoos, but little other than 
+                    the most durable carved stones has survived to modern times and we can only speculate about their existence based on our observation of still existing 'hunter-gatherer' cultures such as those of Africa or Oceania.
+                </p>
+
+                <h3>Pictograms</h3>
+                <p>
+                    A pictogram (pictograph) is a symbol representing a concept, object, activity, place or event by illustration. Pictography is a form of proto-writing whereby ideas are transmitted through drawing. 
+                    Pictographs were the next step in the evolution of communication: the most important difference between petroglyphs and pictograms is that petroglyphs are simply showing an event, 
+                    but pictograms are telling a story about the event, thus they can for example be ordered chronologically.
+                    <br><br>
+                    Pictograms were used by various ancient cultures all over the world since around 9000 BCE, when tokens marked with simple pictures began to be used to label basic farm produce and become increasingly popular around 6000-5000 BCE. 
+                    Another example of this is how the people of the Netherlands used pictograms to portray what was going on at the time.
+                    <br><br>
+                    They were the basis of cuneiform and hieroglyphs and began to develop into logographic writing systems around 5000 BCE.
+                </p>
+
+                <h3>Ideograms</h3>
+                <p>
+                    Pictograms, in turn, evolved into ideograms, graphical symbols that represent an idea. Their ancestors, the pictograms, could represent only something resembling their form: therefore a pictogram of a circle could represent a sun, 
+                    but not concepts like 'heat', 'light', 'day' or 'Great God of the Sun'. Ideograms, on the other hand, could convey more abstract concepts.
+                    <figure>
+                        <img src="Our_Father_in_heaven_-_Mikmaq_hierogl.gif" class="info-img">
+                        <figcaption>The beginning of the Lord's Prayer in Míkmaq hieroglyphic writing. The text reads Nujjinen wásóq - "Our father / in heaven".</figcaption>
+                    </figure>
+                    Because some ideas are universal, many different cultures developed similar ideograms. For example, an eye with a tear means 'sadness' in Native American ideograms in California, as it does for the Aztecs, the early Chinese and the Egyptians. 
+
+                    Ideograms were precursors of logographic writing systems.
+                </p>
+
+                <h3>Writing</h3>
+                <p>
+                    <h4>Early scripts</h4>
+                    The oldest-known forms of writing were primarily logographic in nature, based on pictographic and ideographic elements. Most writing systems can be broadly divided into three categories: logographic, syllabic and alphabetic (or segmental); however, all three may be found in any given writing system in varying proportions, often making it difficult to categorize a system uniquely.
+                    <figure>
+                        <img src="writing.jpg" class="info-img">
+                        <figcaption>26th century BC Sumerian cuneiform script in Sumerian language, listing gifts to the high priestess of Adab on the occasion of her election. One of the earliest examples of human writing.</figcaption>
+                    </figure>
+                    The invention of the first writing systems is roughly contemporary with the beginning of the Bronze Age in the late Neolithic of the late 5th millennium BCE. The first writing system is generally believed to have been invented in prehistoric Sumer and developed by the late 4th millennium BCE into cuneiform. Egyptian hieroglyphs, and the undeciphered Proto-Elamite writing system and Indus Valley script, also date to this era, though a few scholars have questioned the Indus Valley script's status as a writing system.
+                    <br><br>
+                    The original Sumerian writing system was derived from a system of clay tokens used to represent commodities. By the end of the 4th millennium BCE, this had evolved into a method of keeping accounts, using a round shaped stylus impressed into soft clay at different angles for recording numbers. This was gradually augmented with pictographic writing using a sharp stylus to indicate what was being counted. Round-stylus and sharp-stylus writing was gradually replaced about 2700–2000 BC by writing using a wedge-shaped stylus (hence the term cuneiform), at first only for logograms, but developed to include phonetic elements by 2800 BCE. About 2600 BCE cuneiform began to represent syllables of spoken Sumerian language.
+                    <br><br>
+                    Finally, cuneiform writing became general-purpose writing system for logograms, syllables, and numbers. By the 26th century; BCE, this script had been adapted to another Mesopotamian language, Akkadian, and from that to others such as Hurrian, and Hittite. Scripts similar in appearance to this writing system include those for Ugaritic and Old Persian.
+                    <br><br>
+                    The Chinese script may have originated independently of the Middle Eastern scripts, around the 16th century BCE (early Shang dynasty), out of a late neolithic Chinese system of proto-writing dating back to c. 6000 BCE. The inspiration of Chinese script originally came from bird and animal tracks and how they are so distinct. [9] The pre-Columbian writing systems of the Americas, including Olmec and Mayan, are also generally believed to have had independent origins.
+
+                    <h4>Alphabet</h4>
+                    <figure>
+                        <img src="alphabet.jpg" class="info-img">
+                        <figcaption>A Specimen of typeset fonts and languages, by William Caslon, letter founder; from the 1728 Cyclopaedia.</figcaption>
+                    </figure>
+                    <p>
+                        The first pure alphabets (properly, "abjads", mapping single symbols to single phonemes, but not necessarily each phoneme to a symbol) emerged around 2000 BCE in Ancient Egypt, but by then alphabetic principles had already been incorporated into Egyptian hieroglyphs for a millennium (see Middle Bronze Age alphabets). For example, the letter F is a phonetic variant of the first letter of the Hebrew word "vav", meaning nail.
+                        <br><br>
+                        By 2700 BCE, Egyptian writing had a set of some 22 hieroglyphs to represent syllables that begin with a single consonant of their language, plus a vowel (or no vowel) to be supplied by the native speaker. These glyphs were used as pronunciation guides for logograms, to write grammatical inflections, and, later, to transcribe loan words and foreign names.
+                        <br><br>
+                        However, although seemingly alphabetic in nature, the original Egyptian uniliterals were not a system and were never used by themselves to encode Egyptian speech. In the Middle Bronze Age an apparently "alphabetic" system is thought by some to have been developed in central Egypt around 1700 BCE for or by Semitic workers, but we cannot read these early writings and their exact nature remains open to interpretation.
+                        <br><br>
+                        Over the next five centuries this Semitic "alphabet" (really a syllabary like Phoenician writing) seems to have spread north. All subsequent alphabets around the world with the sole exception of Korean Hangul have either descended from it, or been inspired by one of its descendants.
+                        <br><br>
+                        Scholars agree that there is a relationship between the West-Semitic alphabet and the creation of the Greek alphabet. There is debate between scholars regarding the earliest uses of the Greek alphabet because of the changes that were made to create the Greek alphabet.
+                        <br><br>
+                        The Greek alphabet had the following characteristics:
+                        <br><br>
+                        The Greek lettering we know of today traces back to the eighth century BCE
+                        <ol>
+                            <li>Early Greek scripts used the twenty-two West-Semitic letters and included five supplementary letters.</li>
+                            <li>Early Greek was not uniform in structure, and had many local variations.</li>
+                            <li>The Greek lettering was written using a lapidary style of writing.</li>
+                            <li>Greek was written in a boustrophedon style.</li>
+                        </ol>
+                        
+                    </p>
+                    <h3>Storytelling</h3>
+                    <p>
+                        Verbal communication is one of the earliest forms of human communication, the oral tradition of storytelling has dated back to various times in history. The development of communication in its oral form can be based on certain historical periods. The complexity of oral communication has always been reflective based on the circumstance of the time period. Verbal communication was never bound to one specific area, instead, it had and continues to be a globally shared tradition of communication.
+                        People communicated through song, poems, and chants, as some examples. People would gather in groups and pass down stories, myths, and history. Oral poets from Indo-European regions were known as "weavers of words" for their mastery over the spoken word and ability to tell stories.
+                        Nomadic people also had oral traditions that they used to tell stories of the history of their people to pass them on to the next generation.
+                        <br><br>
+                        Nomadic tribes have been the torch bearers of oral storytelling. Nomads of Arabia are one example of the many nomadic tribes that have continued through history to use oral storytelling as a tool to tell their histories and the story of their people. Due to the nature of nomadic life, these individuals were often left without architecture and possessions to call their own, and often left little to no traces of themselves.
+                        The richness of the nomadic life and culture is preserved by early Muslim scholars who collect the poems and stories that are handed down from generation to generation. Poems created by these Arabic nomads are passed down by specialists known as sha'ir. These individuals spread the stories and histories of these nomadic tribes, and often in times of war, would strengthen morale within members of given tribes through these stories.
+                        Another example of this nomadic lifestyle where the people had no possessions but only passed on stories were the Waldensians, who passed along the word of God to anyone who would listen.
+                        <br><br>
+                        In its natural form, oral communication was, and has continued to be, one of the best ways for humans to spread their message, history, and traditions to the world.
+                    </p>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

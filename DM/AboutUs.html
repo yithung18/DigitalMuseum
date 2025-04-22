@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>About Us</title>
+        <style>
+            body{
+                font-family: 'Josefin Sans', sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: #c8bca4;
+            padding: 7px;
+            position: relative;
+            z-index: 2;
+            }
+
+            .menu-icon {
+                font-size: 20px;
+                cursor: pointer;
+                margin-right: 12px; 
+                margin-top: 0px;
+            }
+
+            /* Side Menu */
+            .side-menu {
+                position: fixed;
+                top: 0;
+                right: -250px;
+                width: 250px;
+                height: 100%;
+                background-color: #c8bca4;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+                transition: right 0.3s ease-in-out;
+                padding-top: 20px;
+                z-index: 3; /* Ensures it's above everything */
+            }
+
+            .side-menu a {
+                display: block;
+                padding: 10px 20px;
+                font-size: 18px;
+                text-decoration: none;
+                color: black;
+            }
+
+            .side-menu a:hover {
+                background-color: #b0a58a;
+            }
+
+            .close-btn {
+                font-size: 24px;
+                cursor: pointer;
+                padding: 10px;
+                display: block;
+                text-align: right;
+            }
+            
+            .main{
+                width: auto;
+                height: 100vh;
+                background: linear-gradient(to top, rgba(0,0,0,0.25)50%, rgba(0,0,0,0.25)50%), url(aboutUs_wallpaper.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+            .intro{
+                font-family:'Times New Roman', Times, serif;
+                width: fit-content;
+                max-width: 70%;
+                text-align: left;
+                margin-left:70px;
+                padding-top: 150px;
+                font-size: 22px;
+                color:antiquewhite;
+            }
+            .intro h1{
+                font-size: 47px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <section class="aboutUs">
+            <div class="navbar">
+                <span class="menu-icon" onclick="openMenu()">&#9776;</span>
+            </div>
+        
+            <div id="side-menu" class="side-menu">
+                <span class="close-btn" onclick="closeMenu()">✖</span>
+                <a href="MainMenu.php">Home</a>
+                <a href="HistoryOfCom.html">History of communication</a>
+                <a href="Favourite.php">Favourite</a>
+                <a href="Profile.html">Profile</a>
+                <a href="AboutUs.html">About Us</a>
+                <a href="ContactUs.html">Contact Us</a>
+            </div>
+        
+            <div class = "main">
+                <!-- <img src="aboutUs_wallpaper.jpg"> -->
+                 <div class = "intro">
+                    <h1><b>About Us</b></h1>
+                    <p>
+                        Welcome to the Digital Museum of Communication Device History, a virtual space dedicated to exploring the evolution of human communication. 
+                        From ancient symbols to modern smartphones, we bring history to life through interactive exhibits and detailed stories. 
+                        
+                        Our goal is to educate and inspire by preserving the rich history of communication technology. 
+                        We believe that understanding the past helps us appreciate the present and innovate for the future.
+
+                        Here, you'll find a carefully curated collection of historical artifacts, rare photographs, 
+                        and expert articles, all designed to take you on a journey through time.
+                    </p>
+
+                 </div>
+            </div>
+
+            <script>
+                function openMenu() {
+                    document.getElementById("side-menu").style.right = "0";
+                }
+                
+                function closeMenu() {
+                    document.getElementById("side-menu").style.right = "-250px";
+                }
+
+            </script>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: #c8bca4;
+            padding: 7px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-icon {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 12px; 
+            margin-top: 0px;
+        }
+
+        /* Side Menu */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #c8bca4;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease-in-out;
+            padding-top: 20px;
+            z-index: 3; /* Ensures it's above everything */
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .side-menu a:hover {
+            background-color: #b0a58a;
+        }
+
+        .close-btn {
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            display: block;
+            text-align: right;
+        }
+
+        .main{
+            width: auto;
+            height: 800px;
+            background: linear-gradient(to top, rgba(0,0,0,0.4)50%, rgba(0,0,0,0.4)50%), url(aboutUs_wallpaper.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            width: 70%;
+            margin: auto;
+            padding: 50px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #c8bca4;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 60%;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #c8bca4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #b0a58a;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            /* margin-top: 50px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+                <span class="menu-icon" onclick="openMenu()">&#9776;</span>
+            </div>
+        
+            <div id="side-menu" class="side-menu">
+                <span class="close-btn" onclick="closeMenu()">✖</span>
+                <a href="MainMenu.php">Home</a>
+                <a href="#recommendations">Recommendation</a>
+                <a href="#new">What's new</a>
+                <a href="HistoryOfCom.html">History of communication</a>
+                <a href="Favourite.php">Favourite</a>
+                <a href="Profile.html">Profile</a>
+                <a href="AboutUs.html">About Us</a>
+                <a href="ContactUs.html">Contact Us</a>
+            </div>
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <p class="contact-info"><i>📧</i> Email: museum@history.com</p>
+            <p class="contact-info"><i>📞</i> Phone: +123 456 789</p>
+            <p class="contact-info"><i>📍</i> Location: Virtual Museum</p>
+
+            <h2>Send Us a Message</h2>
+            <form id="form">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" id="button">Send Message</button>
+            </form>
+        </div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">emailjs.init('uSxyjAzXEURtLYRnC')</script>
+        
+        <script>
+            function openMenu() {
+                document.getElementById("side-menu").style.right = "0";
+            }
+            
+            function closeMenu() {
+                document.getElementById("side-menu").style.right = "-250px";
+            }
+
+            const btn = document.getElementById('button');
+
+            document.getElementById('form')
+            .addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...';
+
+                const serviceID = 'service_aeika9s';
+                const templateID = 'template_2ac130y';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                    btn.value = 'Send Email';
+                    alert('Sent!');
+                    }, (err) => {
+                    btn.value = 'Send Email';
+                    alert(JSON.stringify(err));
+                });
+            });
+
+        </script>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Digital Museum of Communication History</p>
+    </div>
+
+</body>
+</html>

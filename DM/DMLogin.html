@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family:'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 84vh;
+            background-color: #f0f0f0;
+        }
+
+        .login-container {
+            background: linear-gradient(to top, rgba(0,0,0,0.4)30%, rgba(0,0,0,0.7)90%), url(login_background.jpeg);
+            background-size: cover;
+            /* background-attachment: fixed; */
+            height: 650px;
+            text-align: center;
+            width: 100%;            
+        }
+
+        .login-container h1 {
+            margin-top: 115px;
+            font-size: 30px;
+            color: #e8dcc3;
+            /* background-color: #d1c3a7; */
+        }
+
+        .login-text {
+            margin-top: 0px;
+            margin-bottom: 50px;
+            font-size: 28px;
+        }
+
+        .form-container {
+            font-family: 'Poppins', serif;
+            width: 70%;
+            height: 50%;
+            margin: auto;
+            padding: 50px;
+            text-align: center;
+            background: rgba(230, 230, 230, 0.9);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .form-container div {
+            margin-bottom: 20px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            width: 300px;
+            padding: 8px;
+            font-size: 13px;
+            border: none;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            display: block; 
+            margin: 20px auto; 
+        }
+
+        .form-container button {
+            padding: 8px 20px;
+            font-size: 14px;
+            margin-top: -10px;
+            cursor: pointer;
+            background-color: #f8f1e7;
+            border: none;
+            border-radius: 30px;
+        }
+
+        .register{
+            font-size: 12px;
+        }
+
+        .guest-login {
+            margin-top: 20px;
+            font-size: 12px;
+            color: rgb(45, 3, 101);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome to Digital Museum!</h1>
+
+        <div class="form-container">
+            <p class="login-text"><b>Login</b></p>
+        
+            <form action="login.php" method="POST">
+                <label for="username"></label>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                
+                <label for="password"></label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            
+                <div>
+                    <button type="submit">Login</button> 
+                </div>
+            </form>
+            
+            <div class="register">
+                <p>Don't have account? <a href="DMRegister.html">Register</a></p>
+            </div>
+            <div class="guest-login">
+                <a href="MainMenu_Guest.php">Login as guest</a>
+            </div>
+    </div>
+</body>
+</html>
